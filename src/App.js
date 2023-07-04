@@ -21,6 +21,21 @@ const user = {
   name: "Heidy",
   imageUrl: "https://i.imgur.com/yXOvdOSs.jpg"
 };
+const films =[
+  {movie : 'inception', isLeo:true, id: 1},
+  {movie : 'shutter island', isLeo:true, id: 2},
+  {movie : 'interstellar', isLeo:false, id: 3},
+  ]
+  const listItem = films.map(film=> 
+  <li
+    key= {film.id}
+    style={{
+      color:film.isLeo ? 'magenta' : 'darkgreen'
+    }}
+    >
+      {film.movie}
+      </li>
+    );
 
 export default function MyApp() {
   return (
@@ -40,6 +55,7 @@ export default function MyApp() {
           }}
         />
       </>
+      <ul>{listItem}</ul>
     </div>
   );
 }
